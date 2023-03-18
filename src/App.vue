@@ -2,112 +2,123 @@
   <div id="app">
     <!-- Navigation Bar -->
     <nav class="navbar navbar-dark bg-dark">
-      <div class="container-fluid" v-if="this.cart.length > 0">
-        <a class="storeCart d-lg-flex"
-          ><button v-on:click="navigateTo">
-            {{ cartItems
-            }}<font-awesome-icon icon="fa-solid fa-cart-shopping" /></button
-        ></a>
-      </div>
-      <div class="container-fluid" v-else>
-        <a class="storeCart d-lg-flex"
-          ><button disabled>
-            {{ cartItems
-            }}<font-awesome-icon icon="fa-solid fa-cart-shopping" /></button
-        ></a>
+      <div class="row">
+        <div class="col-12" v-if="this.cart.length > 0">
+          <a class="storeCart d-lg-flex"
+            ><button v-on:click="navigateTo">
+              {{ cartItems
+              }}<font-awesome-icon icon="fa-solid fa-cart-shopping" /></button
+          ></a>
+        </div>
+        <div class="col-6" v-else>
+          <a class="storeCart d-lg-flex"
+            ><button disabled>
+              {{ cartItems
+              }}<font-awesome-icon icon="fa-solid fa-cart-shopping" /></button
+          ></a>
+        </div>
       </div>
     </nav>
 
-    <!-- Search Feature -->
-    <div id="searchBox">
-      <input
-        type="text"
-        v-model="search"
-        id="searchBar"
-        placeholder="search for a lesson"
-      />
+    <div class="container mt-5">
+      <div class="row">
+        <!-- Search Feature -->
+        <div class="col-12" id="searchBox">
+          <input
+            type="text"
+            v-model="search"
+            id="searchBar"
+            placeholder="search for a lesson"
+          />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <!-- Sorting Options -->
+          <section id="sortWrapper" class="mb-4">
+            <p class="display-6" style="text-align: center" id="alignText">
+              Sort according to
+            </p>
+            <div class="row mt-2">
+              <div class="col">
+                <input
+                  type="radio"
+                  id="subject"
+                  name="sortOption"
+                  value="subject"
+                  v-model="sortOption"
+                />
+                <label for="subject" class="lead">Subject</label>
+              </div>
+
+              <div class="col">
+                <input
+                  type="radio"
+                  id="location"
+                  name="sortOption"
+                  value="location"
+                  v-model="sortOption"
+                />
+                <label for="location" class="lead">Location</label>
+              </div>
+
+              <div class="col">
+                <input
+                  type="radio"
+                  id="price"
+                  name="sortOption"
+                  value="price"
+                  v-model="sortOption"
+                />
+                <label for="price" class="lead">Price</label>
+              </div>
+
+              <div class="col">
+                <input
+                  type="radio"
+                  id="stock"
+                  name="sortOption"
+                  value="stock"
+                  v-model="sortOption"
+                />
+                <label for="stock" class="lead">Availability</label>
+              </div>
+            </div>
+          </section>
+          <!-- Ordering Options -->
+          <section id="orderWrapper" class="mb-4">
+            <p class="display-6" style="text-align: center" id="alignText">
+              Order according to
+            </p>
+            <div class="row mt-2">
+              <div class="col">
+                <input
+                  type="radio"
+                  id="asc"
+                  name="orderBy"
+                  value="asc"
+                  v-model="orderOption"
+                />
+                <label for="asc" class="lead">Ascending order</label>
+              </div>
+
+              <div class="col">
+                <input
+                  type="radio"
+                  id="desc"
+                  name="orderBy"
+                  value="desc"
+                  v-model="orderOption"
+                />
+                <label for="desc" class="lead">Descending order</label>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
     </div>
+
     <br />
-    <!-- Sorting Options -->
-    <section id="sortWrapper" class="mb-4">
-      <p class="display-6" style="text-align: center" id="alignText">
-        Sort according to
-      </p>
-      <div class="row mt-2">
-        <div class="col">
-          <input
-            type="radio"
-            id="subject"
-            name="sortOption"
-            value="subject"
-            v-model="sortOption"
-          />
-          <label for="subject" class="lead">Subject</label>
-        </div>
-
-        <div class="col">
-          <input
-            type="radio"
-            id="location"
-            name="sortOption"
-            value="location"
-            v-model="sortOption"
-          />
-          <label for="location" class="lead">Location</label>
-        </div>
-
-        <div class="col">
-          <input
-            type="radio"
-            id="price"
-            name="sortOption"
-            value="price"
-            v-model="sortOption"
-          />
-          <label for="price" class="lead">Price</label>
-        </div>
-
-        <div class="col">
-          <input
-            type="radio"
-            id="stock"
-            name="sortOption"
-            value="stock"
-            v-model="sortOption"
-          />
-          <label for="stock" class="lead">Availability</label>
-        </div>
-      </div>
-    </section>
-    <!-- Ordering Options -->
-    <section id="orderWrapper" class="mb-4">
-      <p class="display-6" style="text-align: center" id="alignText">
-        Order according to
-      </p>
-      <div class="row mt-2">
-        <div class="col">
-          <input
-            type="radio"
-            id="asc"
-            name="orderBy"
-            value="asc"
-            v-model="orderOption"
-          />
-          <label for="asc" class="lead">Ascending order</label>
-        </div>
-
-        <div class="col">
-          <input
-            type="radio"
-            id="desc"
-            name="orderBy"
-            value="desc"
-            v-model="orderOption"
-          />
-          <label for="desc" class="lead">Descending order</label>
-        </div>
-      </div>
-    </section>
 
     <main>
       <component

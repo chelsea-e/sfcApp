@@ -4,12 +4,9 @@
           <br />
           <!-- Content of Lessons Purchased -->
           <div class="row g-4">
-            <div class="col-lg-4 col-sm-6" v-for="lesson in cart">
+            <div class="col-md-3 col-sm-4" v-for="lesson in cart">
               <div class="content lessonForm">
-                <div class="mt-4 mb-2">
-                  <img v-bind:src="baseURL + '/' + lesson.lesson.imageURL" style="height: 50%; width: 100%" />
-                </div>
-                <br />
+                  <img v-bind:src="baseURL + '/' + lesson.lesson.imageURL" style="height: 300px" />
                 <p><i v-bind:class="lesson.icon"></i></p>
                 <div class="content mt-4 mb-2">
                   <p><strong>Subject: </strong>{{lesson.lesson.topic}}</p>
