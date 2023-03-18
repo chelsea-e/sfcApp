@@ -3,7 +3,7 @@ import App from './App.vue'
 import BootstrapVue from 'bootstrap-vue'
 import{ library } from '@fortawesome/fontawesome-svg-core'
 import{ FontAwesomeIcon } from '@fortawesome/vue-fontawesome' 
-import{ faCartShopping} from '@fortawesome/free-solid-svg-icons' 
+import{ faCartShopping } from '@fortawesome/free-solid-svg-icons' 
 
  
 import './assets/main.css'
