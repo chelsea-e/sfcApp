@@ -41,7 +41,7 @@
 <script>
 export default {
   name: "app",
-  props: ["filteredLessons", "baseURL", "cart"],
+  props: ["filteredLessons", "baseURL"],
   methods: {
     canaddtocart(lesson) {
       return lesson.spaces > this.cartSpace(lesson);

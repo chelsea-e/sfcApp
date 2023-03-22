@@ -57,7 +57,7 @@ export default{
     phone: "",
     }
   },
-  props: ["filteredLessons", "baseURL", "cart"],
+  props: ["baseURL", "cart"],
   methods:{
  // validate name
  validateNameInput() {
